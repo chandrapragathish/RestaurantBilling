@@ -1,0 +1,13 @@
+D:\CHANDRU\0My Site\Restaurant Billing\Restaurant Billing\bin\Debug\Restaurant Billing.exe.config
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant_Billing.MainForm.resources
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant_Billing.Master.MenuItem.resources
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant_Billing.Properties.Resources.resources
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant_Billing.Master.Category.resources
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant_Billing.Master.Unit.resources
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant_Billing.Master.Division.resources
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant Billing.csproj.GenerateResource.Cache
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\bin\Debug\Restaurant Billing.exe.config
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\bin\Debug\Restaurant Billing.exe
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\bin\Debug\Restaurant Billing.pdb
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant Billing.exe
+D:\CHANDRU\0My Site\Restorent billing\Restaurant Billing\Restaurant Billing\obj\Debug\Restaurant Billing.pdb
