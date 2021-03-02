@@ -35,7 +35,6 @@ namespace Restaurant_Billing.Master
             cbo_unit.Text = "Select";
             cbo_division.Text = "Select";
             txt_price.Text = "";
-            txt_disc.Text = "";
         }
         void Refresh()
         {
@@ -44,29 +43,32 @@ namespace Restaurant_Billing.Master
             txt_name.Text = "";
             txt_printName.Text = "";
             txt_price.Text = "";
-            txt_disc.Text = "";
 
-           
 
-            DataTable dt = cdata.GetTable("select * from menu_item");
+
+            DataTable dt = cdata.GetTable("select M.Code Code,Name,PrintName,M.Category Code_Category,C.Category Category,M.Unit Code_Unit,U.Unit Unit,M.Division Code_Division,D.Division Division,Price from menu_item M inner join item_category C on M.Category= C.Code inner join item_unit U on M.Unit= U.Code  inner join item_division D on M.Division= D.Code ");
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns["Code_Category"].Visible = false;
+            dataGridView1.Columns["Code_Unit"].Visible = false;
+            dataGridView1.Columns["Code_Division"].Visible = false;
             dataGridView1.ClearSelection();
            
 
             dt = cdata.GetTable("select * from item_category");
             cbo_category.DataSource = dt;
             cbo_category.DisplayMember = "Category";
-            cbo_category.Text = "Select";
+            cbo_category.ValueMember = "Code";
 
             dt = cdata.GetTable("select * from item_unit");
             cbo_unit.DataSource = dt;
             cbo_unit.DisplayMember = "Unit";
-            cbo_unit.Text = "Select";
+            cbo_unit.ValueMember = "Code";
 
             dt = cdata.GetTable("select * from item_division");
             cbo_division.DataSource = dt;
             cbo_division.DisplayMember = "Division";
-            cbo_division.Text = "Select";
+            cbo_division.ValueMember = "Code";
+
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -82,7 +84,7 @@ namespace Restaurant_Billing.Master
             {
                 if (cdata.GetSingleValue("select Code from menu_item where Code=" + txt_code.Text + "") == "")
                 {
-                    Boolean result = cdata.ExecuteQry("insert into menu_item (Name,PrintName,Category,Unit,Division,Price,Discount) values('" + txt_name.Text + "','" + txt_printName.Text + "','" + cbo_category.Text + "','" + cbo_unit.Text + "','" + cbo_division.Text + "','" + txt_price.Text + "','" + txt_disc.Text + "')");
+                    Boolean result = cdata.ExecuteQry("insert into menu_item (Name,PrintName,Category,Unit,Division,Price) values('" + txt_name.Text + "','" + txt_printName.Text + "'," + cbo_category.SelectedValue + "," + cbo_unit.SelectedValue + "," + cbo_division.SelectedValue + ",'" + txt_price.Text + "')");
                     if (result == true)
                         MessageBox.Show("Item Added sucessfully");
                     else
@@ -90,7 +92,7 @@ namespace Restaurant_Billing.Master
                 }
                 else
                 {
-                    Boolean result = cdata.ExecuteQry("update  menu_item set Name='" + txt_name.Text + "',PrintName='" + txt_printName.Text + "',Category='" + cbo_category.Text + "',Unit='" + cbo_unit.Text + "',Division='" + cbo_division.Text + "',Price=" + txt_price.Text + ",Discount=" + txt_disc.Text + " where Code=" + txt_code.Text + " ");
+                    Boolean result = cdata.ExecuteQry("update  menu_item set Name='" + txt_name.Text + "',PrintName='" + txt_printName.Text + "',Category=" + cbo_category.SelectedValue + ",Unit=" + cbo_unit.SelectedValue + ",Division=" + cbo_division.SelectedValue + ",Price=" + txt_price.Text + " where Code=" + txt_code.Text + " ");
                     if (result == true)
                         MessageBox.Show("Item Updated sucessfully");
                     else
@@ -136,13 +138,20 @@ namespace Restaurant_Billing.Master
                 txt_code.Text = Convert.ToString(selectedRow.Cells["Code"].Value);
                 txt_name.Text = Convert.ToString(selectedRow.Cells["Name"].Value);
                 txt_printName.Text = Convert.ToString(selectedRow.Cells["PrintName"].Value);
-                cbo_category.Text = Convert.ToString(selectedRow.Cells["Category"].Value);
-                cbo_unit.Text = Convert.ToString(selectedRow.Cells["Unit"].Value);
-                cbo_division.Text = Convert.ToString(selectedRow.Cells["Division"].Value);
+                cbo_category.SelectedValue = Convert.ToInt16(selectedRow.Cells["Code_Category"].Value);
+                cbo_category.Text =selectedRow.Cells["Category"].Value.ToString();
+                cbo_unit.SelectedValue = Convert.ToInt16(selectedRow.Cells["Code_Unit"].Value);
+                cbo_unit.Text = selectedRow.Cells["Unit"].Value.ToString();
+                cbo_division.SelectedValue = Convert.ToInt16(selectedRow.Cells["Code_Division"].Value);
+                cbo_division.Text = selectedRow.Cells["Division"].Value.ToString();
                 txt_price.Text = Convert.ToString(selectedRow.Cells["Price"].Value);
-                txt_disc.Text = Convert.ToString(selectedRow.Cells["Discount"].Value);
             }
             GridSelect = true;
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+
         }
 
 

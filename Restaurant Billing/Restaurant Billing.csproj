@@ -48,6 +48,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsDataAccess.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KOT\kot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KOT\kot.Designer.cs">
+      <DependentUpon>kot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KOT\ProcessKot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KOT\ProcessKot.Designer.cs">
+      <DependentUpon>ProcessKot.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +98,33 @@
     <Compile Include="Master\Division.Designer.cs">
       <DependentUpon>Division.cs</DependentUpon>
     </Compile>
+    <Compile Include="Master\Tables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Tables.Designer.cs">
+      <DependentUpon>Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master\Tax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Tax.Designer.cs">
+      <DependentUpon>Tax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\waiters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\waiters.Designer.cs">
+      <DependentUpon>waiters.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KOT\kot.resx">
+      <DependentUpon>kot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KOT\ProcessKot.resx">
+      <DependentUpon>ProcessKot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +144,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Master\Division.resx">
       <DependentUpon>Division.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Tables.resx">
+      <DependentUpon>Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Tax.resx">
+      <DependentUpon>Tax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\waiters.resx">
+      <DependentUpon>waiters.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -123,7 +177,7 @@
     <None Include="Resources\Main.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Report\" />
+    <None Include="Resources\SaveSmall.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete1.ico" />
@@ -145,6 +199,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\The Madras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HomeSmall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RefreshSmall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RefeshSmall1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProcessSmall.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Printer3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Billing.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -114,6 +114,41 @@ namespace Restaurant_Billing
             this.Hide();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Restaurant_Billing.Master.Tables menuItem = new Restaurant_Billing.Master.Tables();
+            menuItem.Show();
+            this.Hide();
+        }
+
+        private void btn_tax_Click(object sender, EventArgs e)
+        {
+            Restaurant_Billing.Master.Tax menuItem = new Restaurant_Billing.Master.Tax();
+            menuItem.Show();
+            this.Hide();
+        }
+
+        private void btn_waiter_Click(object sender, EventArgs e)
+        {
+            Restaurant_Billing.Master.waiters menuItem = new Restaurant_Billing.Master.waiters();
+            menuItem.Show();
+            this.Hide();
+        }
+
+        private void btnkot_Click(object sender, EventArgs e)
+        {
+            Restaurant_Billing.Master.kot menuItem = new Restaurant_Billing.Master.kot();
+            menuItem.Show();
+            this.Hide();
+        }
+
+        private void btn_prsKot_Click(object sender, EventArgs e)
+        {
+            Restaurant_Billing.Master.ProcessKot menuItem = new Restaurant_Billing.Master.ProcessKot();
+            menuItem.Show();
+            this.Hide();
+        }
+
       
 
     }
