@@ -30,7 +30,6 @@ namespace Restaurant_Billing
         {
             pnl_Master.Visible = false;
             pnl_KOT.Visible = false;
-            pnl_billing.Visible = false;
 
         }
 
@@ -39,13 +38,11 @@ namespace Restaurant_Billing
             movepanel(btn_Master);
             pnl_Master.Visible = true;
             pnl_KOT.Visible = false;
-            pnl_billing.Visible = false;
         }
 
         private void btn_billing_MouseHover(object sender, EventArgs e)
         {
             movepanel(btn_billing);
-            pnl_billing.Visible = true;
             pnl_Master.Visible = false;
             pnl_KOT.Visible = false;
         }
@@ -55,7 +52,6 @@ namespace Restaurant_Billing
             movepanel(btn_kot);
             pnl_KOT.Visible = true;
             pnl_Master.Visible = false;
-            pnl_billing.Visible = false;
         }
 
         private void btn_item_Click(object sender, EventArgs e)
@@ -77,7 +73,6 @@ namespace Restaurant_Billing
             movepanel(btn_Master);
             pnl_Master.Visible = true;
             pnl_KOT.Visible = false;
-            pnl_billing.Visible = false;
         }
 
         private void btn_kot_Click(object sender, EventArgs e)
@@ -85,15 +80,13 @@ namespace Restaurant_Billing
             movepanel(btn_kot);
             pnl_KOT.Visible = true;
             pnl_Master.Visible = false;
-            pnl_billing.Visible = false;
         }
 
         private void btn_billing_Click(object sender, EventArgs e)
         {
-            movepanel(btn_billing);
-            pnl_billing.Visible = true;
-            pnl_Master.Visible = false;
-            pnl_KOT.Visible = false;
+            Restaurant_Billing.Master.Billing menuItem = new Restaurant_Billing.Master.Billing();
+            menuItem.Show();
+            this.Hide();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -145,6 +138,13 @@ namespace Restaurant_Billing
         private void btn_prsKot_Click(object sender, EventArgs e)
         {
             Restaurant_Billing.Master.ProcessKot menuItem = new Restaurant_Billing.Master.ProcessKot();
+            menuItem.Show();
+            this.Hide();
+        }
+
+        private void btn_guest_Click(object sender, EventArgs e)
+        {
+            Restaurant_Billing.Master.Guest menuItem = new Restaurant_Billing.Master.Guest();
             menuItem.Show();
             this.Hide();
         }

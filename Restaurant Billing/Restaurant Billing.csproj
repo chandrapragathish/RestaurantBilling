@@ -47,13 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsDataAccess.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Billing\Billing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Billing\Billing.Designer.cs">
+      <DependentUpon>Billing.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClsDataAccess.cs" />
+    <Compile Include="ClsReports.cs" />
+    <Compile Include="Globalvar.cs" />
     <Compile Include="KOT\kot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,14 +112,20 @@
     <Compile Include="Master\Tax.Designer.cs">
       <DependentUpon>Tax.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\waiters.cs">
+    <Compile Include="Master\waiters.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report\waiters.Designer.cs">
+    <Compile Include="Master\waiters.Designer.cs">
       <DependentUpon>waiters.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Master\Guest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\Guest.Designer.cs">
+      <DependentUpon>Guest.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Billing\Billing.resx">
+      <DependentUpon>Billing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KOT\kot.resx">
       <DependentUpon>kot.cs</DependentUpon>
@@ -151,8 +159,11 @@
     <EmbeddedResource Include="Master\Tax.resx">
       <DependentUpon>Tax.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\waiters.resx">
+    <EmbeddedResource Include="Master\waiters.resx">
       <DependentUpon>waiters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\Guest.resx">
+      <DependentUpon>Guest.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -223,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Billing.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

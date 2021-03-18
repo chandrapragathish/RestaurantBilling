@@ -1,6 +1,6 @@
 ﻿namespace Restaurant_Billing.Master
 {
-    partial class Tables
+    partial class Guest
     {
         /// <summary>
         /// Required designer variable.
@@ -34,24 +34,28 @@
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label5;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tables));
+            System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label7;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Guest));
             this.itemMaster = new System.Windows.Forms.Label();
-            this.txt_tblno = new System.Windows.Forms.TextBox();
+            this.txt_code = new System.Windows.Forms.TextBox();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.lbl_msg = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.cbo_location = new System.Windows.Forms.ComboBox();
-            this.cbo_status = new System.Windows.Forms.ComboBox();
-            this.txt_code = new System.Windows.Forms.TextBox();
+            this.txt_name = new System.Windows.Forms.TextBox();
+            this.txt_phone = new System.Windows.Forms.TextBox();
+            this.txt_Address = new System.Windows.Forms.TextBox();
             lbl_Name = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,9 +66,9 @@
             lbl_Name.ForeColor = System.Drawing.Color.Aqua;
             lbl_Name.Location = new System.Drawing.Point(97, 110);
             lbl_Name.Name = "lbl_Name";
-            lbl_Name.Size = new System.Drawing.Size(154, 28);
+            lbl_Name.Size = new System.Drawing.Size(33, 28);
             lbl_Name.TabIndex = 2;
-            lbl_Name.Text = "Table Number";
+            lbl_Name.Text = "Id";
             // 
             // label1
             // 
@@ -73,9 +77,9 @@
             label1.ForeColor = System.Drawing.Color.Aqua;
             label1.Location = new System.Drawing.Point(97, 166);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(98, 28);
+            label1.Size = new System.Drawing.Size(71, 28);
             label1.TabIndex = 33;
-            label1.Text = "Location";
+            label1.Text = "Name";
             // 
             // label2
             // 
@@ -104,7 +108,7 @@
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.ForeColor = System.Drawing.Color.Aqua;
-            label4.Location = new System.Drawing.Point(259, 214);
+            label4.Location = new System.Drawing.Point(259, 269);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(17, 28);
             label4.TabIndex = 38;
@@ -115,11 +119,33 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label5.ForeColor = System.Drawing.Color.Aqua;
-            label5.Location = new System.Drawing.Point(97, 214);
+            label5.Location = new System.Drawing.Point(97, 269);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(73, 28);
+            label5.Size = new System.Drawing.Size(91, 28);
             label5.TabIndex = 37;
-            label5.Text = "Status";
+            label5.Text = "Address";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.ForeColor = System.Drawing.Color.Aqua;
+            label6.Location = new System.Drawing.Point(259, 215);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(17, 28);
+            label6.TabIndex = 43;
+            label6.Text = ":";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.ForeColor = System.Drawing.Color.Aqua;
+            label7.Location = new System.Drawing.Point(97, 220);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(76, 28);
+            label7.TabIndex = 42;
+            label7.Text = "Phone";
             // 
             // itemMaster
             // 
@@ -129,18 +155,18 @@
             this.itemMaster.Location = new System.Drawing.Point(23, 24);
             this.itemMaster.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.itemMaster.Name = "itemMaster";
-            this.itemMaster.Size = new System.Drawing.Size(206, 32);
+            this.itemMaster.Size = new System.Drawing.Size(212, 32);
             this.itemMaster.TabIndex = 0;
-            this.itemMaster.Text = "TABLE MASTER";
+            this.itemMaster.Text = "GUEST MASTER";
             // 
-            // txt_tblno
+            // txt_code
             // 
-            this.txt_tblno.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tblno.Location = new System.Drawing.Point(292, 107);
-            this.txt_tblno.Name = "txt_tblno";
-            this.txt_tblno.Size = new System.Drawing.Size(250, 36);
-            this.txt_tblno.TabIndex = 15;
-            this.txt_tblno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tblno_KeyPress);
+            this.txt_code.Enabled = false;
+            this.txt_code.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_code.Location = new System.Drawing.Point(292, 107);
+            this.txt_code.Name = "txt_code";
+            this.txt_code.Size = new System.Drawing.Size(250, 36);
+            this.txt_code.TabIndex = 15;
             // 
             // btn_refresh
             // 
@@ -149,7 +175,7 @@
             this.btn_refresh.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_refresh.Image = global::Restaurant_Billing.Properties.Resources.Refresh1;
             this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_refresh.Location = new System.Drawing.Point(220, 410);
+            this.btn_refresh.Location = new System.Drawing.Point(220, 499);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(144, 57);
             this.btn_refresh.TabIndex = 20;
@@ -165,7 +191,7 @@
             this.btn_home.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.Image = global::Restaurant_Billing.Properties.Resources.Home1;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(398, 410);
+            this.btn_home.Location = new System.Drawing.Point(398, 499);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(144, 57);
             this.btn_home.TabIndex = 19;
@@ -181,7 +207,7 @@
             this.btn_delete.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Image = global::Restaurant_Billing.Properties.Resources.Delete11;
             this.btn_delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_delete.Location = new System.Drawing.Point(398, 304);
+            this.btn_delete.Location = new System.Drawing.Point(398, 430);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(144, 57);
             this.btn_delete.TabIndex = 18;
@@ -197,7 +223,7 @@
             this.btn_save.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Image = global::Restaurant_Billing.Properties.Resources.Save;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(220, 304);
+            this.btn_save.Location = new System.Drawing.Point(220, 431);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(144, 56);
             this.btn_save.TabIndex = 16;
@@ -211,11 +237,11 @@
             this.lbl_msg.AutoSize = true;
             this.lbl_msg.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_msg.ForeColor = System.Drawing.Color.Lime;
-            this.lbl_msg.Location = new System.Drawing.Point(311, 259);
+            this.lbl_msg.Location = new System.Drawing.Point(308, 390);
             this.lbl_msg.Name = "lbl_msg";
-            this.lbl_msg.Size = new System.Drawing.Size(231, 26);
+            this.lbl_msg.Size = new System.Drawing.Size(235, 26);
             this.lbl_msg.TabIndex = 25;
-            this.lbl_msg.Text = "Table Added Sucessfully";
+            this.lbl_msg.Text = "Guest Added Sucessfully";
             this.lbl_msg.Visible = false;
             // 
             // dgv
@@ -227,47 +253,38 @@
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(515, 360);
+            this.dgv.Size = new System.Drawing.Size(620, 360);
             this.dgv.TabIndex = 32;
             this.dgv.SelectionChanged += new System.EventHandler(this.dgv_SelectionChanged);
             // 
-            // cbo_location
+            // txt_name
             // 
-            this.cbo_location.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_location.FormattingEnabled = true;
-            this.cbo_location.Items.AddRange(new object[] {
-            "General",
-            "A/C Room"});
-            this.cbo_location.Location = new System.Drawing.Point(292, 163);
-            this.cbo_location.Name = "cbo_location";
-            this.cbo_location.Size = new System.Drawing.Size(250, 36);
-            this.cbo_location.TabIndex = 39;
-            this.cbo_location.Text = "Select";
+            this.txt_name.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_name.Location = new System.Drawing.Point(292, 158);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(250, 36);
+            this.txt_name.TabIndex = 41;
             // 
-            // cbo_status
+            // txt_phone
             // 
-            this.cbo_status.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_status.FormattingEnabled = true;
-            this.cbo_status.Items.AddRange(new object[] {
-            "Service Available",
-            "Not Available"});
-            this.cbo_status.Location = new System.Drawing.Point(292, 211);
-            this.cbo_status.Name = "cbo_status";
-            this.cbo_status.Size = new System.Drawing.Size(250, 36);
-            this.cbo_status.TabIndex = 40;
-            this.cbo_status.Text = "Select";
+            this.txt_phone.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_phone.Location = new System.Drawing.Point(292, 212);
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.Size = new System.Drawing.Size(250, 36);
+            this.txt_phone.TabIndex = 44;
             // 
-            // txt_code
+            // txt_Address
             // 
-            this.txt_code.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_code.Location = new System.Drawing.Point(292, 86);
-            this.txt_code.Name = "txt_code";
-            this.txt_code.Size = new System.Drawing.Size(10, 22);
-            this.txt_code.TabIndex = 41;
-            this.txt_code.Visible = false;
+            this.txt_Address.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Address.Location = new System.Drawing.Point(292, 269);
+            this.txt_Address.Multiline = true;
+            this.txt_Address.Name = "txt_Address";
+            this.txt_Address.Size = new System.Drawing.Size(257, 118);
+            this.txt_Address.TabIndex = 45;
             // 
-            // Tables
+            // Guest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,9 +292,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.ControlBox = false;
-            this.Controls.Add(this.txt_code);
-            this.Controls.Add(this.cbo_status);
-            this.Controls.Add(this.cbo_location);
+            this.Controls.Add(this.txt_Address);
+            this.Controls.Add(this.txt_phone);
+            this.Controls.Add(label6);
+            this.Controls.Add(label7);
+            this.Controls.Add(this.txt_name);
             this.Controls.Add(label4);
             this.Controls.Add(label5);
             this.Controls.Add(label3);
@@ -289,18 +308,18 @@
             this.Controls.Add(this.btn_home);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.txt_tblno);
+            this.Controls.Add(this.txt_code);
             this.Controls.Add(lbl_Name);
             this.Controls.Add(this.itemMaster);
             this.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Tables";
+            this.Name = "Guest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "MenuItem";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Tables_Load);
+            this.Load += new System.EventHandler(this.Guest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -310,15 +329,15 @@
         #endregion
 
         private System.Windows.Forms.Label itemMaster;
-        private System.Windows.Forms.TextBox txt_tblno;
+        private System.Windows.Forms.TextBox txt_code;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button btn_home;
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.Label lbl_msg;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.ComboBox cbo_location;
-        private System.Windows.Forms.ComboBox cbo_status;
-        private System.Windows.Forms.TextBox txt_code;
+        private System.Windows.Forms.TextBox txt_name;
+        private System.Windows.Forms.TextBox txt_phone;
+        private System.Windows.Forms.TextBox txt_Address;
     }
 }

@@ -32,7 +32,11 @@
             this.itemMaster = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btn_home = new System.Windows.Forms.Button();
-            this.btn_kotProcess = new System.Windows.Forms.Button();
+            this.btn_kot = new System.Windows.Forms.Button();
+            this.btn_chgkot = new System.Windows.Forms.Button();
+            this.btn_billing = new System.Windows.Forms.Button();
+            this.btn_remove = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,8 +61,9 @@
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersVisible = false;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1070, 561);
+            this.dgv.Size = new System.Drawing.Size(971, 561);
             this.dgv.TabIndex = 32;
             // 
             // btn_home
@@ -68,30 +73,96 @@
             this.btn_home.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.Image = global::Restaurant_Billing.Properties.Resources.HomeSmall;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(975, 674);
+            this.btn_home.Location = new System.Drawing.Point(878, 675);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(124, 40);
+            this.btn_home.Size = new System.Drawing.Size(122, 40);
             this.btn_home.TabIndex = 71;
             this.btn_home.Text = "Home";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_home.UseVisualStyleBackColor = false;
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click_1);
+            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
-            // btn_kotProcess
+            // btn_kot
             // 
-            this.btn_kotProcess.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_kotProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_kotProcess.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_kotProcess.Image = global::Restaurant_Billing.Properties.Resources.ProcessSmall;
-            this.btn_kotProcess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_kotProcess.Location = new System.Drawing.Point(829, 674);
-            this.btn_kotProcess.Name = "btn_kotProcess";
-            this.btn_kotProcess.Size = new System.Drawing.Size(124, 40);
-            this.btn_kotProcess.TabIndex = 73;
-            this.btn_kotProcess.Text = "KOT";
-            this.btn_kotProcess.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_kotProcess.UseVisualStyleBackColor = false;
-            this.btn_kotProcess.Click += new System.EventHandler(this.btn_kotProcess_Click);
+            this.btn_kot.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_kot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_kot.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_kot.Image = global::Restaurant_Billing.Properties.Resources.ProcessSmall;
+            this.btn_kot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_kot.Location = new System.Drawing.Point(562, 675);
+            this.btn_kot.Name = "btn_kot";
+            this.btn_kot.Size = new System.Drawing.Size(128, 40);
+            this.btn_kot.TabIndex = 73;
+            this.btn_kot.Text = "New KOT";
+            this.btn_kot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_kot.UseVisualStyleBackColor = false;
+            this.btn_kot.Click += new System.EventHandler(this.btn_kot_Click);
+            // 
+            // btn_chgkot
+            // 
+            this.btn_chgkot.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_chgkot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chgkot.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_chgkot.Image = global::Restaurant_Billing.Properties.Resources.ProcessSmall;
+            this.btn_chgkot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_chgkot.Location = new System.Drawing.Point(1081, 449);
+            this.btn_chgkot.Name = "btn_chgkot";
+            this.btn_chgkot.Size = new System.Drawing.Size(154, 40);
+            this.btn_chgkot.TabIndex = 74;
+            this.btn_chgkot.Text = "Change KOT";
+            this.btn_chgkot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_chgkot.UseVisualStyleBackColor = false;
+            this.btn_chgkot.Visible = false;
+            this.btn_chgkot.Click += new System.EventHandler(this.btn_chgkot_Click);
+            // 
+            // btn_billing
+            // 
+            this.btn_billing.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_billing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_billing.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_billing.Image = global::Restaurant_Billing.Properties.Resources.Billing;
+            this.btn_billing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_billing.Location = new System.Drawing.Point(422, 675);
+            this.btn_billing.Name = "btn_billing";
+            this.btn_billing.Size = new System.Drawing.Size(111, 40);
+            this.btn_billing.TabIndex = 122;
+            this.btn_billing.Text = "Billing";
+            this.btn_billing.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_billing.UseVisualStyleBackColor = false;
+            this.btn_billing.Click += new System.EventHandler(this.btn_billing_Click);
+            // 
+            // btn_remove
+            // 
+            this.btn_remove.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_remove.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_remove.Image = global::Restaurant_Billing.Properties.Resources.Remove;
+            this.btn_remove.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_remove.Location = new System.Drawing.Point(1094, 506);
+            this.btn_remove.Name = "btn_remove";
+            this.btn_remove.Size = new System.Drawing.Size(118, 40);
+            this.btn_remove.TabIndex = 123;
+            this.btn_remove.Text = "Remove";
+            this.btn_remove.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_remove.UseVisualStyleBackColor = false;
+            this.btn_remove.Visible = false;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_refresh.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_refresh.Image = global::Restaurant_Billing.Properties.Resources.RefeshSmall1;
+            this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_refresh.Location = new System.Drawing.Point(723, 675);
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.Size = new System.Drawing.Size(127, 40);
+            this.btn_refresh.TabIndex = 124;
+            this.btn_refresh.Text = "Refresh";
+            this.btn_refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_refresh.UseVisualStyleBackColor = false;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // ProcessKot
             // 
@@ -101,7 +172,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.ControlBox = false;
-            this.Controls.Add(this.btn_kotProcess);
+            this.Controls.Add(this.btn_refresh);
+            this.Controls.Add(this.btn_remove);
+            this.Controls.Add(this.btn_billing);
+            this.Controls.Add(this.btn_chgkot);
+            this.Controls.Add(this.btn_kot);
             this.Controls.Add(this.btn_home);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.itemMaster);
@@ -125,6 +200,10 @@
         private System.Windows.Forms.Label itemMaster;
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btn_home;
-        private System.Windows.Forms.Button btn_kotProcess;
+        private System.Windows.Forms.Button btn_kot;
+        private System.Windows.Forms.Button btn_chgkot;
+        private System.Windows.Forms.Button btn_billing;
+        private System.Windows.Forms.Button btn_remove;
+        private System.Windows.Forms.Button btn_refresh;
     }
 }

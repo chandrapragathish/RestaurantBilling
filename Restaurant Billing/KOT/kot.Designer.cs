@@ -35,10 +35,13 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label20;
+            System.Windows.Forms.Label lbl_category;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(kot));
             this.txt_tabletype = new System.Windows.Forms.TextBox();
             this.lbl_msg = new System.Windows.Forms.Label();
             this.dgv_kot = new System.Windows.Forms.DataGridView();
+            this.Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this._Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,12 +51,12 @@
             this.cbo_table = new System.Windows.Forms.ComboBox();
             this.dgv_item = new System.Windows.Forms.DataGridView();
             this.btn_qty = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.lbl_table = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txt_nop = new System.Windows.Forms.TextBox();
             this.txt_kotNo = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.lbl_waiter = new System.Windows.Forms.Button();
             this.txt_waitername = new System.Windows.Forms.TextBox();
             this.cbo_waitecode = new System.Windows.Forms.ComboBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -62,6 +65,7 @@
             this.txt_itemCode = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.pnl_category = new System.Windows.Forms.Panel();
+            this.lst_waiter = new System.Windows.Forms.ListBox();
             this.button8 = new System.Windows.Forms.Button();
             this.txt_remark = new System.Windows.Forms.TextBox();
             this.lstbx_Item = new System.Windows.Forms.ListBox();
@@ -73,7 +77,10 @@
             this.btn_refresh = new System.Windows.Forms.Button();
             this.btn_home = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
-            this.lst_waiter = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lst_available = new System.Windows.Forms.ListBox();
+            this.dgv_process = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -81,8 +88,13 @@
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
+            label20 = new System.Windows.Forms.Label();
+            lbl_category = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_kot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_item)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_process)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -162,6 +174,28 @@
             label7.TabIndex = 67;
             label7.Text = ":";
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label20.ForeColor = System.Drawing.Color.White;
+            label20.Location = new System.Drawing.Point(25, 0);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(82, 21);
+            label20.TabIndex = 23;
+            label20.Text = "Available";
+            // 
+            // lbl_category
+            // 
+            lbl_category.AutoSize = true;
+            lbl_category.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lbl_category.ForeColor = System.Drawing.Color.White;
+            lbl_category.Location = new System.Drawing.Point(25, 0);
+            lbl_category.Name = "lbl_category";
+            lbl_category.Size = new System.Drawing.Size(95, 21);
+            lbl_category.TabIndex = 23;
+            lbl_category.Text = "Processing";
+            // 
             // txt_tabletype
             // 
             this.txt_tabletype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -190,6 +224,7 @@
             this.dgv_kot.AllowUserToDeleteRows = false;
             this.dgv_kot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_kot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Check,
             this._Code,
             this._Name,
             this._Qty,
@@ -204,14 +239,25 @@
             this.dgv_kot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_kot.Size = new System.Drawing.Size(640, 351);
             this.dgv_kot.TabIndex = 32;
+            this.dgv_kot.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_kot_CellClick);
             this.dgv_kot.DoubleClick += new System.EventHandler(this.dgv_kot_DoubleClick);
             this.dgv_kot.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgv_kot_KeyDown);
+            // 
+            // Check
+            // 
+            this.Check.HeaderText = "";
+            this.Check.Name = "Check";
+            this.Check.ReadOnly = true;
+            this.Check.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Check.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Check.Width = 50;
             // 
             // _Code
             // 
             this._Code.HeaderText = "Code";
             this._Code.Name = "_Code";
             this._Code.ReadOnly = true;
+            this._Code.Width = 70;
             // 
             // _Name
             // 
@@ -232,13 +278,14 @@
             this._Unit.HeaderText = "Unit";
             this._Unit.Name = "_Unit";
             this._Unit.ReadOnly = true;
-            this._Unit.Width = 80;
+            this._Unit.Width = 70;
             // 
             // _Price
             // 
             this._Price.HeaderText = "Price";
             this._Price.Name = "_Price";
             this._Price.ReadOnly = true;
+            this._Price.Width = 90;
             // 
             // _Amount
             // 
@@ -289,19 +336,19 @@
             this.btn_qty.Text = "0.0";
             this.btn_qty.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // lbl_table
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Aqua;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(12, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 28);
-            this.button3.TabIndex = 42;
-            this.button3.Text = "Table";
-            this.button3.UseVisualStyleBackColor = false;
+            this.lbl_table.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.lbl_table.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_table.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_table.ForeColor = System.Drawing.Color.Aqua;
+            this.lbl_table.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_table.Location = new System.Drawing.Point(12, 61);
+            this.lbl_table.Name = "lbl_table";
+            this.lbl_table.Size = new System.Drawing.Size(78, 28);
+            this.lbl_table.TabIndex = 42;
+            this.lbl_table.Text = "Table";
+            this.lbl_table.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -326,6 +373,7 @@
             this.txt_nop.Name = "txt_nop";
             this.txt_nop.Size = new System.Drawing.Size(173, 29);
             this.txt_nop.TabIndex = 43;
+            this.txt_nop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nop_KeyPress);
             // 
             // txt_kotNo
             // 
@@ -351,19 +399,19 @@
             this.button5.Text = "NOP";
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // lbl_waiter
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Aqua;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(12, 141);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 28);
-            this.button4.TabIndex = 54;
-            this.button4.Text = "Waiter";
-            this.button4.UseVisualStyleBackColor = false;
+            this.lbl_waiter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.lbl_waiter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_waiter.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_waiter.ForeColor = System.Drawing.Color.Aqua;
+            this.lbl_waiter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_waiter.Location = new System.Drawing.Point(12, 141);
+            this.lbl_waiter.Name = "lbl_waiter";
+            this.lbl_waiter.Size = new System.Drawing.Size(78, 28);
+            this.lbl_waiter.TabIndex = 54;
+            this.lbl_waiter.Text = "Waiter";
+            this.lbl_waiter.UseVisualStyleBackColor = false;
             // 
             // txt_waitername
             // 
@@ -428,6 +476,7 @@
             this.txt_qty.Size = new System.Drawing.Size(90, 29);
             this.txt_qty.TabIndex = 59;
             this.txt_qty.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_qty_KeyDown);
+            this.txt_qty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_qty_KeyPress);
             // 
             // txt_itemCode
             // 
@@ -464,6 +513,21 @@
             this.pnl_category.Name = "pnl_category";
             this.pnl_category.Size = new System.Drawing.Size(525, 195);
             this.pnl_category.TabIndex = 65;
+            // 
+            // lst_waiter
+            // 
+            this.lst_waiter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lst_waiter.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_waiter.ForeColor = System.Drawing.Color.Ivory;
+            this.lst_waiter.FormattingEnabled = true;
+            this.lst_waiter.ItemHeight = 22;
+            this.lst_waiter.Location = new System.Drawing.Point(396, 171);
+            this.lst_waiter.Name = "lst_waiter";
+            this.lst_waiter.Size = new System.Drawing.Size(254, 158);
+            this.lst_waiter.TabIndex = 78;
+            this.lst_waiter.Visible = false;
+            this.lst_waiter.DoubleClick += new System.EventHandler(this.lst_waiter_DoubleClick);
+            this.lst_waiter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lst_waiter_KeyDown);
             // 
             // button8
             // 
@@ -526,13 +590,14 @@
             this.btn_billing.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_billing.Image = global::Restaurant_Billing.Properties.Resources.Billing;
             this.btn_billing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_billing.Location = new System.Drawing.Point(861, 642);
+            this.btn_billing.Location = new System.Drawing.Point(675, 638);
             this.btn_billing.Name = "btn_billing";
             this.btn_billing.Size = new System.Drawing.Size(141, 40);
             this.btn_billing.TabIndex = 75;
             this.btn_billing.Text = "Billing";
             this.btn_billing.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_billing.UseVisualStyleBackColor = false;
+            this.btn_billing.Click += new System.EventHandler(this.btn_billing_Click);
             // 
             // btn_print
             // 
@@ -541,13 +606,14 @@
             this.btn_print.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.Image = global::Restaurant_Billing.Properties.Resources.Printer3;
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(675, 642);
+            this.btn_print.Location = new System.Drawing.Point(870, 591);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(141, 40);
             this.btn_print.TabIndex = 74;
-            this.btn_print.Text = "Print";
+            this.btn_print.Text = "Kot Print";
             this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_remove
             // 
@@ -572,7 +638,7 @@
             this.btn_kotProcess.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_kotProcess.Image = global::Restaurant_Billing.Properties.Resources.ProcessSmall;
             this.btn_kotProcess.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_kotProcess.Location = new System.Drawing.Point(861, 593);
+            this.btn_kotProcess.Location = new System.Drawing.Point(870, 638);
             this.btn_kotProcess.Name = "btn_kotProcess";
             this.btn_kotProcess.Size = new System.Drawing.Size(141, 40);
             this.btn_kotProcess.TabIndex = 72;
@@ -588,7 +654,7 @@
             this.btn_refresh.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_refresh.Image = global::Restaurant_Billing.Properties.Resources.RefeshSmall1;
             this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_refresh.Location = new System.Drawing.Point(1059, 642);
+            this.btn_refresh.Location = new System.Drawing.Point(1059, 638);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(141, 40);
             this.btn_refresh.TabIndex = 71;
@@ -604,7 +670,7 @@
             this.btn_home.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_home.Image = global::Restaurant_Billing.Properties.Resources.HomeSmall;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_home.Location = new System.Drawing.Point(1059, 691);
+            this.btn_home.Location = new System.Drawing.Point(1059, 684);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(141, 40);
             this.btn_home.TabIndex = 70;
@@ -629,20 +695,55 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
-            // lst_waiter
+            // panel2
             // 
-            this.lst_waiter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lst_waiter.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lst_waiter.ForeColor = System.Drawing.Color.Ivory;
-            this.lst_waiter.FormattingEnabled = true;
-            this.lst_waiter.ItemHeight = 22;
-            this.lst_waiter.Location = new System.Drawing.Point(396, 170);
-            this.lst_waiter.Name = "lst_waiter";
-            this.lst_waiter.Size = new System.Drawing.Size(254, 158);
-            this.lst_waiter.TabIndex = 78;
-            this.lst_waiter.Visible = false;
-            this.lst_waiter.DoubleClick += new System.EventHandler(this.lst_waiter_DoubleClick);
-            this.lst_waiter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lst_waiter_KeyDown);
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.panel2.Controls.Add(label20);
+            this.panel2.Location = new System.Drawing.Point(1208, 344);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(143, 24);
+            this.panel2.TabIndex = 131;
+            // 
+            // lst_available
+            // 
+            this.lst_available.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.lst_available.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lst_available.ForeColor = System.Drawing.Color.Ivory;
+            this.lst_available.FormattingEnabled = true;
+            this.lst_available.ItemHeight = 22;
+            this.lst_available.Location = new System.Drawing.Point(1208, 368);
+            this.lst_available.Name = "lst_available";
+            this.lst_available.Size = new System.Drawing.Size(143, 202);
+            this.lst_available.TabIndex = 129;
+            this.lst_available.Click += new System.EventHandler(this.lst_available_Click);
+            // 
+            // dgv_process
+            // 
+            this.dgv_process.AllowUserToAddRows = false;
+            this.dgv_process.AllowUserToDeleteRows = false;
+            this.dgv_process.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.dgv_process.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_process.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dgv_process.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_process.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.dgv_process.Location = new System.Drawing.Point(1208, 42);
+            this.dgv_process.MultiSelect = false;
+            this.dgv_process.Name = "dgv_process";
+            this.dgv_process.ReadOnly = true;
+            this.dgv_process.RowHeadersVisible = false;
+            this.dgv_process.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_process.Size = new System.Drawing.Size(143, 287);
+            this.dgv_process.TabIndex = 131;
+            this.dgv_process.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_process_CellClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.panel1.Controls.Add(lbl_category);
+            this.panel1.Location = new System.Drawing.Point(1208, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(143, 24);
+            this.panel1.TabIndex = 130;
             // 
             // kot
             // 
@@ -653,6 +754,10 @@
             this.ClientSize = new System.Drawing.Size(1370, 772);
             this.ControlBox = false;
             this.Controls.Add(this.lst_waiter);
+            this.Controls.Add(this.dgv_process);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lst_available);
             this.Controls.Add(this.lst_itemCode);
             this.Controls.Add(this.lstbx_Item);
             this.Controls.Add(this.btn_billing);
@@ -673,7 +778,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(label5);
             this.Controls.Add(this.txt_item);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.lbl_waiter);
             this.Controls.Add(this.cbo_waitecode);
             this.Controls.Add(label4);
             this.Controls.Add(this.txt_waitername);
@@ -683,7 +788,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(label1);
             this.Controls.Add(this.txt_nop);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.lbl_table);
             this.Controls.Add(this.btn_qty);
             this.Controls.Add(this.dgv_item);
             this.Controls.Add(this.cbo_table);
@@ -702,6 +807,11 @@
             this.Load += new System.EventHandler(this.kot_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_kot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_item)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_process)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,12 +825,12 @@
         private System.Windows.Forms.ComboBox cbo_table;
         private System.Windows.Forms.DataGridView dgv_item;
         private System.Windows.Forms.Button btn_qty;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button lbl_table;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txt_nop;
         private System.Windows.Forms.TextBox txt_kotNo;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button lbl_waiter;
         private System.Windows.Forms.TextBox txt_waitername;
         private System.Windows.Forms.ComboBox cbo_waitecode;
         private System.Windows.Forms.Button button6;
@@ -740,12 +850,17 @@
         private System.Windows.Forms.Button btn_billing;
         private System.Windows.Forms.ListBox lstbx_Item;
         private System.Windows.Forms.ListBox lst_itemCode;
+        private System.Windows.Forms.ListBox lst_waiter;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ListBox lst_available;
+        private System.Windows.Forms.DataGridView dgv_process;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Check;
         private System.Windows.Forms.DataGridViewTextBoxColumn _Code;
         private System.Windows.Forms.DataGridViewTextBoxColumn _Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn _Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn _Unit;
         private System.Windows.Forms.DataGridViewTextBoxColumn _Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn _Amount;
-        private System.Windows.Forms.ListBox lst_waiter;
     }
 }

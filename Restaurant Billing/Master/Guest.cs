@@ -11,10 +11,10 @@ using DataAccess;
 
 namespace Restaurant_Billing.Master
 {
-    public partial class Tables : Form
+    public partial class Guest : Form
     {
         ClsDataAccess cdata = new ClsDataAccess();
-        public Tables()
+        public Guest()
         {
             InitializeComponent();
 
@@ -26,38 +26,34 @@ namespace Restaurant_Billing.Master
             try
             {
 
-                if (cdata.GetSingleValue("select Code from table_master where Code=" + txt_code.Text + "") == "")
+                if (cdata.GetSingleValue("select  Code from guest where Code=" + txt_code.Text + "") == "")
                 {
-                    if (cdata.GetSingleValue("select TableNo from table_master where TableNo=" + txt_tblno.Text + "") == "")
-                    {
 
-                        Boolean result = cdata.ExecuteQry("insert into table_master (TableNo,Location,Status) values(" + txt_tblno.Text + ",'" + cbo_location.Text + "','" + cbo_status.Text + "')");
+                    Boolean result = cdata.ExecuteQry("insert into guest (Name,Phone,Address) values('" + txt_name.Text + "'," + txt_phone.Text + ",'" + txt_Address.Text + "')");
                         if (result == true)
                         {
                             lbl_msg.ForeColor = Color.Lime;
-                            DisplayWarning("Table Added sucessfully");
+                            DisplayWarning("Guest Added sucessfully");
                         }
                         else
                         {
                             lbl_msg.ForeColor = Color.Red;
-                            DisplayWarning("Table Not Added");
+                            DisplayWarning("Guest Not Added");
                         }
-                    }
-                    else
-                        DisplayWarning(txt_tblno.Text + " is already exist!");
+                   
                 }
                 else
                 {
-                    Boolean result = cdata.ExecuteQry("update  table_master set TableNo=" + txt_tblno.Text + ",Location='" + cbo_location.Text + "',Status='" + cbo_status.Text + "' where Code=" + txt_code.Text + " ");
+                    Boolean result = cdata.ExecuteQry("update  guest set Name='" + txt_name.Text + "',Phone='" + txt_phone.Text + "',Address='" + txt_Address.Text + "' where Code=" + txt_code.Text + " ");
                     if (result == true)
                     {
                         lbl_msg.ForeColor = Color.Lime;
-                        DisplayWarning("Table Updated sucessfully");
+                        DisplayWarning("Guest Updated sucessfully");
                     }
                     else
                     {
                         lbl_msg.ForeColor = Color.Red;
-                        DisplayWarning("Table Not Updated");
+                        DisplayWarning("Guest Not Updated");
 
                     }
                 }
@@ -75,22 +71,23 @@ namespace Restaurant_Billing.Master
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you Sure want to delete", "Delete Table", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you Sure want to delete", "Delete Guest", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                Boolean result = cdata.ExecuteQry("delete from table_master where Code=" + txt_code.Text + "");
+                Boolean result = cdata.ExecuteQry("delete from guest where Code=" + txt_code.Text + "");
                 Refresh();
                 clearTxt();
                 if (result)
                 {
-                    DisplayWarning("Table Deleted sucessfully");
+                    DisplayWarning("Guest Deleted sucessfully");
 
                 }
 
                 else
-                    DisplayWarning("Table Not Deleted");
+                    DisplayWarning("Guest Not Deleted");
             }
         }
+
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             Refresh();
@@ -103,11 +100,7 @@ namespace Restaurant_Billing.Master
             this.Close();
         }
 
-        private void Tables_Load(object sender, EventArgs e)
-        {
-
-            Refresh();
-        }
+       
 
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
@@ -117,29 +110,29 @@ namespace Restaurant_Billing.Master
                 int selectedrowindex = dgv.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgv.Rows[selectedrowindex];
                 txt_code.Text = Convert.ToString(selectedRow.Cells["Code"].Value);
-                txt_tblno.Text = Convert.ToString(selectedRow.Cells["TableNo"].Value).Substring(6, 1);
-                cbo_location.Text = selectedRow.Cells["Location"].Value.ToString();
-                cbo_status.Text = selectedRow.Cells["Status"].Value.ToString();
+                txt_name.Text = Convert.ToString(selectedRow.Cells["Name"].Value);
+                txt_phone.Text = Convert.ToString(selectedRow.Cells["Phone"].Value);
+                txt_Address.Text = selectedRow.Cells["Address"].Value.ToString();
             }
         }
         void Refresh()
         {
 
-            DataTable dt = cdata.GetTable("select Code,convert(concat('Table-',TableNo),char(10)) TableNo,Location,status from table_master order by TableNo");
+            DataTable dt = cdata.GetTable("select  Code,Name,Phone, Address from guest order by Code");
             dgv.DataSource = dt;
-            dgv.Columns["Code"].Visible = false;
             dgv.ClearSelection();
-            dgv.Columns[1].Width = 110;
-            dgv.Columns[2].Width = 160;
-            dgv.Columns[3].Width = 200;
+            dgv.Columns[0].Width = 80;
+            dgv.Columns[1].Width = 160;
+            dgv.Columns[2].Width = 150;
+            dgv.Columns[3].Width = 225;
             clearTxt();
         }
         void clearTxt()
         {
             txt_code.Text = "";
-            txt_tblno.Text = "";
-            cbo_location.Text = "Select";
-            cbo_status.Text = "Select";
+            txt_phone.Text = "";
+            txt_name.Text = "";
+            txt_Address.Text = "";
         }
         private void DisplayWarning(String message, int Interval = 3000)
         {
@@ -158,13 +151,12 @@ namespace Restaurant_Billing.Master
             timer.Start(); // Starts the timer. 
         }
 
-        private void txt_tblno_KeyPress(object sender, KeyPressEventArgs e)
+        private void Guest_Load(object sender, EventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            Refresh();
+            txt_code.ReadOnly = true;
         }
 
+       
     }
 }

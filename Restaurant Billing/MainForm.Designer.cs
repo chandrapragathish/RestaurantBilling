@@ -36,6 +36,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.btn_Master = new System.Windows.Forms.Button();
             this.pnl_Master = new System.Windows.Forms.Panel();
+            this.btn_guest = new System.Windows.Forms.Button();
             this.btn_waiter = new System.Windows.Forms.Button();
             this.btn_tax = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,11 +45,10 @@
             this.btn_itemCategory = new System.Windows.Forms.Button();
             this.btn_item = new System.Windows.Forms.Button();
             this.pnl_KOT = new System.Windows.Forms.Panel();
+            this.btn_prsKot = new System.Windows.Forms.Button();
             this.btnkot = new System.Windows.Forms.Button();
-            this.pnl_billing = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_prsKot = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.pnl_Master.SuspendLayout();
@@ -138,6 +138,7 @@
             // pnl_Master
             // 
             this.pnl_Master.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.pnl_Master.Controls.Add(this.btn_guest);
             this.pnl_Master.Controls.Add(this.btn_waiter);
             this.pnl_Master.Controls.Add(this.btn_tax);
             this.pnl_Master.Controls.Add(this.button1);
@@ -147,9 +148,24 @@
             this.pnl_Master.Controls.Add(this.btn_item);
             this.pnl_Master.Location = new System.Drawing.Point(250, 86);
             this.pnl_Master.Name = "pnl_Master";
-            this.pnl_Master.Size = new System.Drawing.Size(164, 392);
+            this.pnl_Master.Size = new System.Drawing.Size(164, 429);
             this.pnl_Master.TabIndex = 3;
             this.pnl_Master.Visible = false;
+            // 
+            // btn_guest
+            // 
+            this.btn_guest.FlatAppearance.BorderSize = 0;
+            this.btn_guest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guest.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guest.ForeColor = System.Drawing.Color.White;
+            this.btn_guest.Location = new System.Drawing.Point(0, 370);
+            this.btn_guest.Name = "btn_guest";
+            this.btn_guest.Size = new System.Drawing.Size(161, 47);
+            this.btn_guest.TabIndex = 4;
+            this.btn_guest.Text = "Guest";
+            this.btn_guest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_guest.UseVisualStyleBackColor = true;
+            this.btn_guest.Click += new System.EventHandler(this.btn_guest_Click);
             // 
             // btn_waiter
             // 
@@ -264,9 +280,25 @@
             this.pnl_KOT.Controls.Add(this.btnkot);
             this.pnl_KOT.Location = new System.Drawing.Point(420, 86);
             this.pnl_KOT.Name = "pnl_KOT";
-            this.pnl_KOT.Size = new System.Drawing.Size(164, 284);
+            this.pnl_KOT.Size = new System.Drawing.Size(164, 119);
             this.pnl_KOT.TabIndex = 3;
             this.pnl_KOT.Visible = false;
+            // 
+            // btn_prsKot
+            // 
+            this.btn_prsKot.FlatAppearance.BorderSize = 0;
+            this.btn_prsKot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prsKot.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_prsKot.ForeColor = System.Drawing.Color.White;
+            this.btn_prsKot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_prsKot.Location = new System.Drawing.Point(3, 53);
+            this.btn_prsKot.Name = "btn_prsKot";
+            this.btn_prsKot.Size = new System.Drawing.Size(161, 47);
+            this.btn_prsKot.TabIndex = 5;
+            this.btn_prsKot.Text = "Processing";
+            this.btn_prsKot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_prsKot.UseVisualStyleBackColor = true;
+            this.btn_prsKot.Click += new System.EventHandler(this.btn_prsKot_Click);
             // 
             // btnkot
             // 
@@ -283,15 +315,6 @@
             this.btnkot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnkot.UseVisualStyleBackColor = true;
             this.btnkot.Click += new System.EventHandler(this.btnkot_Click);
-            // 
-            // pnl_billing
-            // 
-            this.pnl_billing.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.pnl_billing.Location = new System.Drawing.Point(590, 86);
-            this.pnl_billing.Name = "pnl_billing";
-            this.pnl_billing.Size = new System.Drawing.Size(164, 284);
-            this.pnl_billing.TabIndex = 3;
-            this.pnl_billing.Visible = false;
             // 
             // panel2
             // 
@@ -312,29 +335,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
-            // btn_prsKot
-            // 
-            this.btn_prsKot.FlatAppearance.BorderSize = 0;
-            this.btn_prsKot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prsKot.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prsKot.ForeColor = System.Drawing.Color.White;
-            this.btn_prsKot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_prsKot.Location = new System.Drawing.Point(3, 53);
-            this.btn_prsKot.Name = "btn_prsKot";
-            this.btn_prsKot.Size = new System.Drawing.Size(161, 47);
-            this.btn_prsKot.TabIndex = 5;
-            this.btn_prsKot.Text = "Processing";
-            this.btn_prsKot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_prsKot.UseVisualStyleBackColor = true;
-            this.btn_prsKot.Click += new System.EventHandler(this.btn_prsKot_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pnl_billing);
             this.Controls.Add(this.pnl_KOT);
             this.Controls.Add(this.pnl_Master);
             this.Controls.Add(this.pictureBox1);
@@ -365,7 +371,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnl_Master;
         private System.Windows.Forms.Panel pnl_KOT;
-        private System.Windows.Forms.Panel pnl_billing;
         private System.Windows.Forms.Button btn_itemCategory;
         private System.Windows.Forms.Button btn_item;
         private System.Windows.Forms.Button btn_itemUnit;
@@ -376,5 +381,6 @@
         private System.Windows.Forms.Button btn_waiter;
         private System.Windows.Forms.Button btnkot;
         private System.Windows.Forms.Button btn_prsKot;
+        private System.Windows.Forms.Button btn_guest;
     }
 }
